@@ -1,0 +1,23 @@
+version: "2"
+
+services:
+  postgres:
+    image: postgres:15.3-alpine
+    environment:
+      POSTGRES_USER: docker
+      POSTGRES_PASSWORD: docker
+      POSTGRES_DB: Artgeist_API
+    networks:
+      - database-network
+
+  adminer:
+    container_name: db-adminer
+    image: adminer
+    ports:
+      - 8080:8080
+    networks:
+      - database-network
+
+networks:
+  database-network:
+    name: database-net
