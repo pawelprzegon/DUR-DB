@@ -1,0 +1,1 @@
+@hourly pg_dump --dbname=$MYDB > /backup/$(date +%Y-%m-%d_%H-%M-%S).sql
