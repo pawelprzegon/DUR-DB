@@ -2,11 +2,12 @@ version: "3.8"
 
 services:
   postgres:
-    image: postgres:15.3-alpine
+    # image: postgres:15.3-alpine
+    build: ./postgres-init
     environment:
       POSTGRES_USER: docker
       POSTGRES_PASSWORD: docker
-      POSTGRES_DB: Artgeist_API
+      POSTGRES_MULTIPLE_DATABASES: raports,logs
     networks:
       - database-network
 
